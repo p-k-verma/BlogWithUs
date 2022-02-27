@@ -6,7 +6,7 @@
               <li><router-link to="/">Home</router-link></li>
               <li><router-link to="/blogs">Blogs</router-link></li>
               <li><router-link to="/">Create Post</router-link></li>
-              <li><router-link to="/">Login/Register</router-link></li>
+              <li><router-link to="/login">Login/Register</router-link></li>
           </ul>
       </div>
       <div class="mobile_toggle" v-if="mobile_toggle" @click="mobile_view">
@@ -15,9 +15,9 @@
       <div class="mobile_nav" :class="{active:sidenav}">
           <ul>
               <li><router-link to="/">Home</router-link></li>
-              <li><router-link to="/">Blogs</router-link></li>
+              <li><router-link to="/blogs">Blogs</router-link></li>
               <li><router-link to="/">Create Post</router-link></li>
-              <li><router-link to="/">Login/Register</router-link></li>
+              <li><router-link to="/login">Login/Register</router-link></li>
           </ul>
       </div>
     </div>

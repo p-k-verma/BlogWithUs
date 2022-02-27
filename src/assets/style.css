@@ -287,24 +287,26 @@
     width: 100%;
   }
 }
-.router-button, button {
-    transition: all .5s ease;
-    cursor: pointer;
-    margin-top: 24px;
-    padding: 12px 24px;
-    background-color: #303030;
-    color: #fff;
-    border-radius: 25px;
-    border: none;
-    text-transform: uppercase;
+.router-button,
+button {
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin-top: 24px;
+  padding: 12px 24px;
+  background-color: #303030;
+  color: #fff;
+  border-radius: 25px;
+  border: none;
+  text-transform: uppercase;
 }
-.router-button:hover, button:hover {
-    background-color: rgba(48,48,48,.7);
+.router-button:hover,
+button:hover {
+  background-color: rgba(48, 48, 48, 0.7);
 }
 
 /* Modal code */
 .modal {
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 101;
@@ -315,17 +317,53 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 .modal .modal-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 8px;
-    width: 300px;
-    padding: 40px 30px;
-    background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  width: 300px;
+  padding: 40px 30px;
+  background-color: #fff;
 }
 .modal .modal-content p {
-    text-align: center;
+  text-align: center;
 }
 .modal .modal-content button {
-    align-self: center;
+  align-self: center;
+}
+
+/* 
+Loading spinner csss */
+.loading {
+  top: 0;
+  z-index: 101;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: spin;
+  /* @keyframes spin {
+    to {
+      transform: rotateZ(360deg);
+    }
+  } */
+}
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+.loading span {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 3px solid transparent;
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+  border-radius: 50%;
+  animation: spin ease 1000ms infinite;
 }

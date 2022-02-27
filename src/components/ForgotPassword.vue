@@ -1,7 +1,7 @@
 <template>
     <div class="reset-password">
-    <Modal v-if="modalActive" :modalMessage="modalMessage" v-on:close-modal="closeModal" />
-    <Loading v-if="loading" />
+    <modal v-if="modalActive" :modalMessage="modalMessage" v-on:close-modal="closeModal" />
+    <loading v-if="loading" />
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
@@ -24,6 +24,8 @@
   </div>
 </template>
 <script>
+import Modal from './Modal.vue';
+import Loading from './Loading.vue';
 export default {
     name: "ForgotPassword",
     data() {
@@ -34,6 +36,32 @@ export default {
         loading: null,
         };
     },
+    component: {
+        Modal,
+        Loading,
+    },
+    methods: {
+    // resetPassword() {
+    //   this.loading = true;
+    //   firebase
+    //     .auth()
+    //     .sendPasswordResetEmail(this.email)
+    //     .then(() => {
+    //       this.modalMessage = "If your account exists, you will receive a email";
+    //       this.loading = false;
+    //       this.modalActive = true;
+    //     })
+    //     .catch((err) => {
+    //       this.modalMessage = err.message;
+    //       this.loading = false;
+    //       this.modalActive = true;
+    //     });
+    // },
+    closeModal() {
+      this.modalActive = !this.modalActive;
+      this.email = "";
+    },
+  },
 }
 </script>
 <style >
