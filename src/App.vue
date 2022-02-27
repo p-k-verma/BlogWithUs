@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <navbar/>
-    <home/>
-    <fooTer/>
+    <navbar v-if="!navigation"/>
+    <router-view></router-view>
+    <fooTer v-if="!navigation"/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import navbar from './components/navbar.vue'
-import home from './components/home.vue'
 import fooTer from './components/footer.vue'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      navigation: null
+    }
+  },
+  created() {
+    this.checkRoute();
+  },
+  watch: {
+    $route(){
+      this.checkRoute();
+    }
+  },
+  methods: {
+    checkRoute() {
+      if (this.$route.name === "Login" || this.$route.name === "Register" || this.$route.name === "ForgotPassword") {
+        this.navigation = true;
+        return;
+      } this.navigation = false;
+    },
+  },
   components: {
-    // HelloWorld,
     navbar,
     fooTer,
-    home,
   }
 }
 </script>
 
 <style>
-
 </style>

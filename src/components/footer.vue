@@ -14,9 +14,9 @@
                     </div>
                     <div class="col-6 navlink ">
                         <ul class="m-0">
-                            <li><router-link >Home</router-link></li>
-                            <li><router-link >Blogs</router-link></li>
-                            <li><router-link >Login/Register</router-link></li>
+                            <li><router-link to="#">Home</router-link></li>
+                            <li><router-link to="#" >Blogs</router-link></li>
+                            <li><router-link to="#" >Login/Register</router-link></li>
                         </ul>
                     </div>
                 </div>  

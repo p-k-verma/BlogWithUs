@@ -1,14 +1,29 @@
 <template>
-    <div>
-        <h1>helllo</h1>
+    <div class="blog-card-wrap">
+        <div class="blog-cards container">
+            <div class="toggle-edit">
+                <span>Toggle Editing Post</span>
+                <input type="checkbox" name="" id="" v-model="editPost">
+            </div>
+            <blogCards :post="post" v-for="(post,index) in sampleBlogCards" :key="index"/>
+        </div>
     </div>
 </template>
 <script>
+import blogCards from './blogCards.vue'
 export default {
-    name: "blogs"
+    name: "blogs",
+    computed: {
+        sampleBlogCards () {
+            return this.$store.state.sampleBlogCards
+        },
+    },
+    components: {
+        blogCards,
+    }
     
 }
 </script>
-<style>
-    
+<style  scoped>
+
 </style>

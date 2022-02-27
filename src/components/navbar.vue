@@ -1,10 +1,10 @@
 <template>
     <div class="navbar">
-      <h1 class="navbar-brand">Blog with Us</h1>
+      <h1 class="navbar-brand"><router-link to="/">Blog with Us</router-link></h1>
       <div class="desktop_nav" v-if="!mobile_toggle">
           <ul class="d-flex">
               <li><router-link to="/">Home</router-link></li>
-              <li><router-link to="/">Blogs</router-link></li>
+              <li><router-link to="/blogs">Blogs</router-link></li>
               <li><router-link to="/">Create Post</router-link></li>
               <li><router-link to="/">Login/Register</router-link></li>
           </ul>

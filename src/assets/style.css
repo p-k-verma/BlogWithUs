@@ -1,148 +1,331 @@
 /* navigation cass starts here */
 .navbar {
-    justify-content: space-between;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    
+  justify-content: space-between;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 .navbar .desktop_nav ul li {
- list-style: none;
- padding: 0px 20px;
+  list-style: none;
+  padding: 0px 20px;
 }
 
 .navbar .mobile_nav {
-    position: absolute;
-    color: white;
-    background-color: black;
-    opacity: 0.9;
-    height: 100vh;
-    width:30%;
-    max-width: 260px;
-    top: 0px;
-    left: 0px;
-    transform: translateX(-100%);
-    transition: all 1s ease;
+  position: absolute;
+  color: white;
+  background-color: black;
+  opacity: 0.9;
+  height: 100vh;
+  width: 30%;
+  max-width: 260px;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-100%);
+  transition: all 1s ease;
 }
 .navbar .mobile_nav.active {
-    transform: translateX(0%);
-    z-index: 999;
+  transform: translateX(0%);
+  z-index: 999;
 }
 .navbar .mobile_nav.active ul {
-    padding-left: 5%;
+  padding-left: 5%;
 }
 .navbar .mobile_nav ul li {
-    list-style: none;
-    padding: 6% 0%;
-    font-size: 18px;
+  list-style: none;
+  padding: 6% 0%;
+  font-size: 18px;
 }
 .mobile_toggle img {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
 }
-
 
 .link {
-    cursor: pointer;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
 }
 .link-light {
-    color: #fff;
+  color: #fff;
 }
 .blog-wrapper .blog-content .arrow {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
 }
 /* FOOTER CSS STARTS HERE */
 .footer {
-    background-color: gray;
-    color: white;
-    padding: 100px 25px;
+  background-color: gray;
+  color: white;
+  padding: 100px 25px;
 }
 
 .footer .navlink ul li {
-    list-style: none;
-    font-size: 22px;
+  list-style: none;
+  font-size: 22px;
 }
 .footer .social_link img {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 .blog-cards {
-    display: flex;
-    padding: 2% 0px;
-    justify-content: space-between;
+  display: flex;
+  padding: 4% 0px;
+  justify-content: space-between;
 }
 .blog-card-wrap {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 .blog-card {
-    position: relative;
-    cursor: pointer;
-    border-radius: 8px;
-    background-color: #fff;
-    min-height: 350px;
-    padding: 9px;
-    width: 24%;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #fff;
+  min-height: 350px;
+  padding: 9px;
+  width: 24%;
 }
 .blog-card .icons {
-    display: flex;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 99;
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 99;
 }
 .blog-card .icons .icon {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: flex;
-    background-color: white;
-    transition: 0.5s ease all;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  background-color: white;
+  transition: 0.5s ease all;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 .blog-card .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 129px;
-    padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 129px;
+  padding: 14px;
 }
 .blog-card .info .arrow {
-    width: 15px;
-    height: 15px;
+  width: 15px;
+  height: 15px;
 }
 .blog-card .info .card_detail h4 {
-    font-size: 20px;
-    margin: 0px;
-    padding-bottom: 10px;
+  font-size: 20px;
+  margin: 0px;
+  padding-bottom: 10px;
 }
 .blog-card .info .card_detail h6 {
-    margin: 0px;
-    font-size: 13px;
+  margin: 0px;
+  font-size: 13px;
 }
 .blog-cards .blog-card .link {
-    font-weight: 500;
+  font-weight: 500;
 }
-.blog-card .icons .icon .edit, .blog-card .icons .icon .trash {
-    width: 21px;
-    height: 21px;
+.blog-card .icons .icon .edit,
+.blog-card .icons .icon .trash {
+  width: 21px;
+  height: 21px;
 }
 .updates .container .router-button img {
-    width: 15px;
-    height: 15px;
+  width: 15px;
+  height: 15px;
 }
 .updates .container .heading h2 {
-    width: 47%;
+  width: 47%;
 }
 .updates .container .router-button {
-    align-items: center;
-    display: flex;
-    justify-content: end;
+  align-items: center;
+  display: flex;
+  justify-content: end;
 }
 .updates {
-    padding: 125px 25px;
+  padding: 125px 25px;
+}
+.blog-cards {
+  position: relative;
+}
+.blog-cards .toggle-edit {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 11px;
+  right: 0;
+}
+.blog-cards .toggle-edit span {
+  margin-right: 16px;
+}
+.blog-cards .toggle-edit input[type="checkbox"] {
+  position: relative;
+  border: none;
+  -webkit-appearance: none;
+  background: #fff;
+  outline: none;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.blog-cards .toggle-edit input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  background: #303030;
+  transform: scale(1.1);
+  transition: 750ms ease all;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.blog-cards .toggle-edit input:checked[type="checkbox"]:before {
+  background: #fff;
+  left: 52px;
+}
+
+/* login */
+.form-wrap {
+  overflow: hidden;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-self: center;
+  margin: 0 auto;
+  width: 90%;
+}
+.form-wrap .login-register {
+  margin-bottom: 32px;
+}
+.form-wrap .login-register .router-link {
+  color: #000;
+}
+.form-wrap form {
+  padding: 0 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.form-wrap form h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #303030;
+  margin-bottom: 40px;
+}
+.form-wrap form .inputs {
+  width: 100%;
+  max-width: 350px;
+}
+.form-wrap form .inputs .input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.form-wrap form .inputs .input input {
+  width: 100%;
+  border: none;
+  background-color: #f2f7f6;
+  padding: 4px 4px 4px 30px;
+  height: 50px;
+}
+.form-wrap form .inputs .input input:focus {
+  outline: none;
+}
+.form-wrap form .inputs .input .icon {
+  width: 16px;
+  position: absolute;
+  left: 6px;
+}
+.form-wrap form .forgot-password {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 16px 0 32px;
+  border-bottom: 1px solid transparent;
+  transition: 0.5s ease all;
+}
+.form-wrap form .forgot-password:hover {
+  border-color: #303030;
+}
+.form-wrap form .angle {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  transform: rotateZ(3deg);
+  width: 60px;
+  right: -30px;
+  height: 101%;
+}
+.form-wrap .background {
+  display: none;
+  flex: 2;
+  background-size: cover;
+  background-image: url("../assets/background.png");
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 900px) {
+  .form-wrap .background {
+    display: initial;
+  }
+  .form-wrap form .angle {
+    display: initial;
+  }
+  .form-wrap {
+    width: 100%;
+  }
+}
+.router-button, button {
+    transition: all .5s ease;
+    cursor: pointer;
+    margin-top: 24px;
+    padding: 12px 24px;
+    background-color: #303030;
+    color: #fff;
+    border-radius: 25px;
+    border: none;
+    text-transform: uppercase;
+}
+.router-button:hover, button:hover {
+    background-color: rgba(48,48,48,.7);
+}
+
+/* Modal code */
+.modal {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 101;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 8px;
+    width: 300px;
+    padding: 40px 30px;
+    background-color: #fff;
+}
+.modal .modal-content p {
+    text-align: center;
+}
+.modal .modal-content button {
+    align-self: center;
 }

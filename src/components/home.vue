@@ -16,7 +16,7 @@
                     <div class="col-8 heading">
                         <h2>NEVER MISS A POST. REGISTER FOR YOUR FREE ACCOUNT TODAY!</h2>
                     </div>
-                    <router-link to="#" class="router-button col-4">
+                    <router-link to="/blogs" class="router-button col-4">
                         Register for FireBlog <img src="../assets/arrow-right-light.svg" alt="" srcset="" class="arrow">
                     </router-link>
                 </div>
@@ -49,29 +49,12 @@ export default {
                 },
             
             ],
-            sampleBlogCards: [
-                {
-                    blogTitle: "Blog Card #1",
-                    blogCoverPhoto: "stock-1",
-                    blogDate: "May 1, 2021"
-                },
-                {
-                    blogTitle: "Blog Card #2",
-                    blogCoverPhoto: "stock-2",
-                    blogDate: "May 1, 2021"
-                },
-                {
-                    blogTitle: "Blog Card #3",
-                    blogCoverPhoto: "stock-3",
-                    blogDate: "May 1, 2021"
-                },
-                {
-                    blogTitle: "Blog Card #4",
-                    blogCoverPhoto: "stock-3",
-                    blogDate: "May 1, 2021"
-                }
-            ]
         }
+    },
+    computed: {
+        sampleBlogCards () {
+            return this.$store.state.sampleBlogCards
+        },
     },
     components: {
         blogPost,
