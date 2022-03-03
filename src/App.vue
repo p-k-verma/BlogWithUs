@@ -9,7 +9,7 @@
 <script>
 import navbar from './components/navbar.vue'
 import fooTer from './components/footer.vue'
-
+import '../src/components/firebase/firebaseInit';
 export default {
   name: 'App',
   data() {

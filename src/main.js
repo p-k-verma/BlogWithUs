@@ -81,3 +81,5 @@ new Vue({
 
 // for vuex store, and in the new Vue we have added store
 import { store } from  "./store/index"
+
+// Firebase

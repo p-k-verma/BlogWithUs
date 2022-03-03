@@ -13,6 +13,11 @@
 import blogCards from './blogCards.vue'
 export default {
     name: "blogs",
+    data() {
+        return {
+            editPost: '',
+        }
+    },
     computed: {
         sampleBlogCards () {
             return this.$store.state.sampleBlogCards

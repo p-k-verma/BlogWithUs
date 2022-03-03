@@ -5,8 +5,8 @@
         <div class="blog-card-wrap">
             <div class="container">
                 <h3>View More Recents Blogs</h3>
-                <div class="blog-cards">
-                    <blogCards :post="post" v-for="(post,index) in sampleBlogCards" :key="index"/>
+                <div class="blog-cards row">
+                    <blogCards class="col-md-6 col-sm-12" :post="post" v-for="(post,index) in sampleBlogCards" :key="index"/>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
                     <div class="col-8 heading">
                         <h2>NEVER MISS A POST. REGISTER FOR YOUR FREE ACCOUNT TODAY!</h2>
                     </div>
-                    <router-link to="/blogs" class="router-button col-4">
+                    <router-link to="/blogs" class="router-button col-4 button-desktop">
                         Register for FireBlog <img src="../assets/arrow-right-light.svg" alt="" srcset="" class="arrow">
                     </router-link>
                 </div>

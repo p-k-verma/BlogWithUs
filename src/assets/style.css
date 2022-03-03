@@ -76,6 +76,9 @@
 .blog-card-wrap {
   background-color: #f1f1f1;
 }
+.blog-card-wrap h3 {
+    padding-top: 4%;
+}
 .blog-card {
   position: relative;
   cursor: pointer;
@@ -145,6 +148,11 @@
 }
 .updates {
   padding: 125px 25px;
+}
+.updates .container .router-button.button-desktop {
+    height: 20%;
+    margin-top: 3%;
+    justify-content: center;
 }
 .blog-cards {
   position: relative;
@@ -366,4 +374,30 @@ Loading spinner csss */
   border-bottom-color: #fff;
   border-radius: 50%;
   animation: spin ease 1000ms infinite;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+    .blog-wrapper {
+        flex-direction: column-reverse!important;
+    }
+    .blog-wrapper .blog-content {
+        padding: 86px 24px!important;
+    }
+    .blog-cards {
+        padding: 4%!important;
+    }
+    .blog-card {
+        width: 49%!important;
+        min-height: 284px!important;
+        margin: 5px 0px;
+    }
 }
