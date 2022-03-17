@@ -8,6 +8,7 @@
 </template>
 <script>
 export default {
+  name: "Modal",
   props: ["modalMessage"],
   methods: {
     closeModal() {

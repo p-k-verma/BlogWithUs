@@ -63,19 +63,25 @@ export default {
                 const auth = getAuth();
                 createUserWithEmailAndPassword(auth, this.email, this.password)
                   .then((userCredential) => {
-                   
                     const user = userCredential.user;
                     console.log(user)
+                    this.error = false;
+                    this.errorMsg = "";
+                    this.$router.push({ name: "Home" });
                     // ...
                   })
                   .catch((error) => {
                    console.log(error)
+                   console.log(error.message);
+                   this.error = true;
+                   this.errorMsg = error.message
                     // ..
                   });
                   
               }
               else{
-                console.log("else error")
+                this.error = true;
+                this.errorMsg = '*Please fill all the data'
               }
         }
 

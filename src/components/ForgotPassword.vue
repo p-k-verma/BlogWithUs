@@ -1,7 +1,9 @@
 <template>
     <div class="reset-password">
     <modal v-if="modalActive" :modalMessage="modalMessage" v-on:close-modal="closeModal" />
-    <loading v-if="loading" />
+    <div class="loader" v-if="loader">
+      <span></span>
+    </div>
     <div class="form-wrap">
       <form class="reset">
         <p class="login-register">
@@ -24,26 +26,43 @@
   </div>
 </template>
 <script>
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import Modal from './Modal.vue';
-import Loading from './Loading.vue';
 export default {
+  components: { Modal },
     name: "ForgotPassword",
     data() {
         return {
         email: "",
         modalActive: false,
         modalMessage: "",
-        loading: null,
+        loader: false,
         };
     },
-    component: {
-        Modal,
-        Loading,
-    },
     methods: {
-    // resetPassword() {
-    
-    // },
+    resetPassword() {
+      if (this.email !== "") {
+        this.loader = true;
+        const auth = getAuth();
+        sendPasswordResetEmail(auth, this.email)
+          .then(() => {
+            console.log("sent");
+            this.modalMessage = "If your account detail is correct, you will receive the mail shortly";
+            this.loader = false;
+            this.modalActive = true;
+          })
+          .catch((error) => {
+            this.modalMessage = error.code;
+            this.loader = false;
+            this.modalActive = true;
+            console.log(error);
+          });
+      }else{
+        console.log('else');
+        this.modalMessage = "Please add data in email section"
+        this.modalActive = true
+      }
+    },
     closeModal() {
       this.modalActive = !this.modalActive;
       this.email = "";

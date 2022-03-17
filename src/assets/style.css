@@ -213,6 +213,14 @@
 }
 .form-wrap .login-register .router-link {
   color: #000;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+  color: #444c4d;
+}
+a {
+  color: #2e2627;
 }
 .form-wrap form {
   padding: 0 10px;
@@ -342,7 +350,7 @@ button:hover {
 
 /* 
 Loading spinner csss */
-.loading {
+.loader {
   top: 0;
   z-index: 101;
   height: 100%;
@@ -364,7 +372,7 @@ Loading spinner csss */
     transform: rotateZ(360deg);
   }
 }
-.loading span {
+.loader span {
   display: block;
   width: 60px;
   height: 60px;
