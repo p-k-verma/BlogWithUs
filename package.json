@@ -9,9 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "firebase": "^8.7.1",
-    "firebase-functions": "^3.18.1",
-    "firebaseui": "^6.0.1",
+    "firebase": "^9.6.8",
+    "m3o": "^1.0.1400",
     "sass-loader": "^10.2.0",
     "save": "^2.4.0",
     "vue": "^2.6.11",

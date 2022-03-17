@@ -42,20 +42,7 @@ export default {
     },
     methods: {
     // resetPassword() {
-    //   this.loading = true;
-    //   firebase
-    //     .auth()
-    //     .sendPasswordResetEmail(this.email)
-    //     .then(() => {
-    //       this.modalMessage = "If your account exists, you will receive a email";
-    //       this.loading = false;
-    //       this.modalActive = true;
-    //     })
-    //     .catch((err) => {
-    //       this.modalMessage = err.message;
-    //       this.loading = false;
-    //       this.modalActive = true;
-    //     });
+    
     // },
     closeModal() {
       this.modalActive = !this.modalActive;

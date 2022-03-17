@@ -37,8 +37,7 @@
 </template>
 <script>
 // import firebase from "firebase/app";
-// import "firebase/auth";
-// import db from "../firebase/firebaseInit.js";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default {
     name: "Register",
     data() {
@@ -52,35 +51,35 @@ export default {
         errorMsg: "",
       };
     },
-  //   methods: {
-  //   async register() {
-  //     if (
-  //       this.email !== "" &&
-  //       this.password !== "" &&
-  //       this.firstName !== "" &&
-  //       this.lastName !== "" &&
-  //       this.username !== ""
-  //     ) {
-  //       this.error = false;
-  //       this.errorMsg = "";
-  //       const firebaseAuth = await firebase.auth();
-  //       const createUser = await firebaseAuth.createUserWithEmailAndPassword(this.email, this.password);
-  //       const result = await createUser;
-  //       const dataBase = db.collection("users").doc(result.user.uid);
-  //       await dataBase.set({
-  //         firstName: this.firstName,
-  //         lastName: this.lastName,
-  //         username: this.username,
-  //         email: this.email,
-  //       });
-  //       this.$router.push({ name: "Home" });
-  //       return;
-  //     }
-  //     this.error = true;
-  //     this.errorMsg = "Please fill out all the fields!";
-  //     return;
-  //   },
-  // },
+  methods: {
+        register(){
+          if (
+                this.email !== "" &&
+                this.password !== "" &&
+                this.firstName !== "" &&
+                this.lastName !== "" &&
+                this.username !== ""
+              ) {
+                const auth = getAuth();
+                createUserWithEmailAndPassword(auth, this.email, this.password)
+                  .then((userCredential) => {
+                   
+                    const user = userCredential.user;
+                    console.log(user)
+                    // ...
+                  })
+                  .catch((error) => {
+                   console.log(error)
+                    // ..
+                  });
+                  
+              }
+              else{
+                console.log("else error")
+              }
+        }
+
+   },
 }
 </script>
 <style >
