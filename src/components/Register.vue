@@ -36,7 +36,8 @@
   </div>
 </template>
 <script>
-// import firebase from "firebase/app";
+// first on is for the database and other one is for the authentication
+
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export default {
     name: "Register",
@@ -64,6 +65,7 @@ export default {
                 createUserWithEmailAndPassword(auth, this.email, this.password)
                   .then((userCredential) => {
                     const user = userCredential.user;
+                    
                     console.log(user)
                     this.error = false;
                     this.errorMsg = "";
@@ -71,13 +73,11 @@ export default {
                     // ...
                   })
                   .catch((error) => {
-                   console.log(error)
-                   console.log(error.message);
+                  //  console.log(error)
+                  //  console.log(error.message);
                    this.error = true;
                    this.errorMsg = error.message
-                    // ..
                   });
-                  
               }
               else{
                 this.error = true;
