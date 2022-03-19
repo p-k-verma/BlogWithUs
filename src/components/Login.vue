@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import axios from 'axios';
 export default {
     name: "Login",
     data() {
@@ -41,21 +41,14 @@ export default {
   methods: {
     signIn() {
       if (this.email !== "" && this.password !== "") {
-            const auth = getAuth();
-            signInWithEmailAndPassword(auth, this.email, this.password)
-            .then((userCredential) => {
-              const user = userCredential.user;
-              console.log(user)
-              this.error = false;
-              this.errorMsg = "";
-              this.$router.push({ name: "Home" });  // ...
-            })
-            .catch((error) => {
-              console.log(error)
-              console.log(error.message);
-              this.error = true;
-              this.errorMsg = error.message
-            });
+           axios
+        .post('https://lhmpim.greenhonchos.com/api/test-login', {
+          email: this.email,
+          password: this.password,
+        })
+        .then((response) => {
+          console.log(response);
+        })
         }
     },
   },

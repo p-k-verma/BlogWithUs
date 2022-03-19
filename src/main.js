@@ -11,6 +11,8 @@ import ForgotPassword from "./components/ForgotPassword.vue"
 import { store } from  "./store/index"
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+
+
 Vue.use(VueRouter);
 const routes = [
   {
