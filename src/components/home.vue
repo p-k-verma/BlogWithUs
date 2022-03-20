@@ -10,7 +10,7 @@
                 </div>
             </div>
         </div>
-        <div class="updates">
+        <div class="updates" v-if="!this.$store.state.profileInitials">
             <div class="container">
                 <div class="row">
                     <div class="col-8 heading">

@@ -8,9 +8,10 @@ import Blogs from "./components/blogs.vue"
 import Login from "./components/Login.vue"
 import Register from "./components/Register.vue"
 import ForgotPassword from "./components/ForgotPassword.vue"
+import Admin from "./components/admin.vue"
+import Profile from "./components/profile.vue"
 import { store } from  "./store/index"
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 
 
 Vue.use(VueRouter);
@@ -55,6 +56,22 @@ const routes = [
       title: "Forgot Password"
     },
   },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: Admin,
+    meta: {
+      title: "Admin"
+    },
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: Profile,
+    meta: {
+      title: "Profile"
+    },
+  },
 ];
 
 const router = new VueRouter({
@@ -80,21 +97,3 @@ new Vue({
   router,
   store
 }).$mount('#app')
-
-const firebaseConfig = {
-  apiKey: "AIzaSyA0Gx4i9-XQcGyzXzagUMXMBnYo_q5AjZw",
-  authDomain: "oursblog-d6c66.firebaseapp.com",
-  databaseURL: "https://oursblog-d6c66-default-rtdb.firebaseio.com",
-  projectId: "oursblog-d6c66",
-  storageBucket: "oursblog-d6c66.appspot.com",
-  messagingSenderId: "852134169054",
-  appId: "1:852134169054:web:fed4fe8e5b8eb9ec86b54f",
-  measurementId: "G-KWM16S3D86"
-};
-
-const app = initializeApp(firebaseConfig);
-getAnalytics(app);
-
-
-
-

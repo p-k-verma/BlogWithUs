@@ -49,6 +49,7 @@ export default {
         .then((response) => {
           this.$store.commit("tokenaddition", response.data.data)
           console.log(this.$store.state.profileInitials);
+          this.$router.push({ name: "Home" })
         })
         }
     },

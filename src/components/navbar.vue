@@ -2,11 +2,39 @@
     <div class="navbar">
       <h1 class="navbar-brand"><router-link to="/">Spark & Shine</router-link></h1>
       <div class="desktop_nav" v-if="!mobile_toggle">
-          <ul class="d-flex">
+          <ul class="d-flex align-items-center">
               <li><router-link to="/">Home</router-link></li>
               <li><router-link to="/blogs">Blogs</router-link></li>
               <li><router-link to="/">Create Post</router-link></li>
-              <li><router-link to="/login">Login/Register</router-link></li>
+              <li v-if="!this.$store.state.profileInitials"><router-link to="/login">Login/Register</router-link></li>
+              <div v-else class="profile" @click="toggle_details">
+                  <span>{{ this.$store.state.profileInitials }}</span>
+                  <div class="profile-menu" v-show="toggle_detail">
+                      <span class="triangle"></span>
+                      <div class="info">
+                          <p class="initials">{{ this.$store.state.profileInitials }}</p>
+                          <div class="right">
+                              <p>{{ this.$store.state.profileFirstName + " " + this.$store.state.profileLastName }}</p>
+                              <p>@{{this.$store.state.profileUsername}}</p>
+                              <p>{{this.$store.state.profileEmail}}</p>
+                          </div>
+                      </div>
+                      <div class="options">
+                          <div class="option">
+                              <img src="../assets/profile.svg" alt="" srcset="">
+                              <router-link to="/profile">Profile</router-link>
+                          </div>
+                          <div class="option">
+                              <img src="../assets/admin.svg" alt="" srcset="">
+                              <router-link to="/admin">Admin</router-link>
+                          </div>
+                          <div class="option">
+                              <img src="../assets/signout.svg" alt="" srcset="">
+                              <router-link to="#">SignOut</router-link>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </ul>
       </div>
       <div class="mobile_toggle" v-if="mobile_toggle" @click="mobile_view">
@@ -28,7 +56,8 @@ export default {
         return {
             mobile_toggle: false,
             desktopwidth: null,
-            sidenav:false
+            sidenav:false,
+            toggle_detail: false
         }
     },
     created() {
@@ -36,6 +65,9 @@ export default {
         this.mobilebarshow();
     },
     methods: {
+        toggle_details(){
+            this.toggle_detail = !this.toggle_detail
+        },
         mobile_view() {
             this.sidenav = !this.sidenav
         },
