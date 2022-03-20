@@ -108,13 +108,17 @@ export default {
           username: this.username,
           firstname: this.firstName,
           lastname: this.lastName,
-          image: this.profilephoto,
+          profileimg: this.profilephoto,
           password: this.password,
           email: this.email
         })
         .then((response) => {
           console.log(response);
+          this.$store.commit("tokenaddition", response.data.data);
           this.$router.push({ name: "Home" });
+        })
+        .catch((error) => {
+          console.log(error);
         })
       } else {
         this.error = true;

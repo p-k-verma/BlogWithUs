@@ -47,7 +47,8 @@ export default {
           password: this.password,
         })
         .then((response) => {
-          console.log(response);
+          this.$store.commit("tokenaddition", response.data.data)
+          console.log(this.$store.state.profileInitials);
         })
         }
     },

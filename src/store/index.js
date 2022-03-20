@@ -27,24 +27,24 @@ export const store = new Vuex.Store({
         blogDate: "May 1, 2021",
       },
     ],
-    // blogPosts: [],
-    // postLoaded: null,
-    // blogHTML: "Write your blog title here...",
-    // blogTitle: "",
-    // blogPhotoName: "",
-    // blogPhotoFileURL: null,
-    // blogPhotoPreview: null,
-    editPost: null,
-    user: null,
-    profileAdmin: null,
-    profileEmail: null,
     profileFirstName: null,
     profileLastName: null,
     profileUsername: null,
-    profileId: null,
+    profileEmail: null,
     profileInitials: null,
+    tokkenId: null,
   },
   actions: {
       
+  },
+  mutations: {
+    tokenaddition(state, payload){
+      state.tokkenId = payload.api_token
+      state.profileFirstName = payload.firstname
+      state.profileLastName = payload.lastname
+      state.profileUsername = payload.username
+      state.profileEmail = payload.email
+      state.profileInitials = payload.firstname.slice(0,1).toUpperCase() + payload.lastname.slice(0,1).toUpperCase()
+    }
   }
 });
