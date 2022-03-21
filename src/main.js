@@ -10,6 +10,7 @@ import Register from "./components/Register.vue"
 import ForgotPassword from "./components/ForgotPassword.vue"
 import Admin from "./components/admin.vue"
 import Profile from "./components/profile.vue"
+import createpost from "./components/createpost.vue"
 import { store } from  "./store/index"
 import VueCookies from 'vue-cookies'
 Vue.use(VueCookies)
@@ -71,6 +72,14 @@ const routes = [
     component: Profile,
     meta: {
       title: "Profile"
+    },
+  },
+  {
+    path: "/createpost",
+    name: "createpost",
+    component: createpost,
+    meta: {
+      title: "createpost"
     },
   },
 ];

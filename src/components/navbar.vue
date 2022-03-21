@@ -5,7 +5,7 @@
           <ul class="d-flex align-items-center">
               <li><router-link to="/">Home</router-link></li>
               <li><router-link to="/blogs">Blogs</router-link></li>
-              <li><router-link to="/">Create Post</router-link></li>
+              <li><router-link to="/createpost">Create Post</router-link></li>
               <li v-if="!this.$store.state.profileInitials"><router-link to="/login">Login/Register</router-link></li>
               <div v-else class="profile" @click="toggle_details">
                   <span>{{ this.$store.state.profileInitials }}</span>
@@ -45,7 +45,7 @@
           <ul>
               <li><router-link to="/">Home</router-link></li>
               <li><router-link to="/blogs">Blogs</router-link></li>
-              <li><router-link to="/">Create Post</router-link></li>
+              <li><router-link to="/createpost">Create Post</router-link></li>
               <li><router-link to="/login">Login/Register</router-link></li>
           </ul>
       </div>
