@@ -30,7 +30,8 @@
                           </div>
                           <div class="option">
                               <img src="../assets/signout.svg" alt="" srcset="">
-                              <router-link to="#">SignOut</router-link>
+                              <!-- <router-link @click="signout"></router-link> -->
+                              <a href="" @click="signout">SignOut</a>
                           </div>
                       </div>
                   </div>
@@ -51,6 +52,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
     data() {
         return {
@@ -63,8 +65,25 @@ export default {
     created() {
         window.addEventListener("resize", this.mobilebarshow);
         this.mobilebarshow();
+        this.reloadclientdata();
     },
     methods: {
+        signout(){
+            console.log("hiiii");
+            this.$cookies.remove("useremail");
+            this.$cookies.remove("userepassword");
+            // this.$router.push({ name: "Home" });
+        },
+        reloadclientdata(){
+            axios
+            .post('https://lhmpim.greenhonchos.com/api/test-login', {
+            email: this.$cookies.get("useremail"),
+            password: this.$cookies.get("userepassword"),
+            })
+            .then((response) => {
+                this.$store.commit("tokenaddition", response.data.data)
+            })
+        },
         toggle_details(){
             this.toggle_detail = !this.toggle_detail
         },

@@ -11,7 +11,8 @@ import ForgotPassword from "./components/ForgotPassword.vue"
 import Admin from "./components/admin.vue"
 import Profile from "./components/profile.vue"
 import { store } from  "./store/index"
-
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
 
 
 Vue.use(VueRouter);

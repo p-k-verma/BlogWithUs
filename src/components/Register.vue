@@ -115,6 +115,10 @@ export default {
         .then((response) => {
           console.log(response);
           this.$store.commit("tokenaddition", response.data.data);
+          // always use tokenid to store in the cookies but due to lack of api we are saving the email and password
+          this.$cookies.set("useremail", response.data.data.email, 0 )
+          this.$cookies.set("userepassword", response.data.data.password, 0 )
+          console.log(this.$cookies.get("useremail"));
           this.$router.push({ name: "Home" });
         })
         .catch((error) => {
