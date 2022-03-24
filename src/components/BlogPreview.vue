@@ -1,5 +1,5 @@
 <template>
-  <div class="post-view">
+  <div class="post-view" @click="closethebox">
     <div class="container quillWrapper">
       <h2>{{ this.blogTitle }}</h2>
       <img :src="blogCoverPhoto" alt="" />
@@ -21,6 +21,11 @@ export default {
     blogCoverPhoto() {
       return this.$store.state.blogPhotoFileURL;
     },
+  },
+  methods: {
+    closethebox(){
+      this.$store.commit("openPhotoPreview")
+    }
   },
 };
 </script>

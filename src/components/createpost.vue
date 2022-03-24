@@ -1,11 +1,11 @@
 <template>
   <div class="create-post">
-    <!-- <BlogCoverPreview v-show="this.$store.state.blogPhotoPreview" /> -->
+    <BlogPreview v-show="this.$store.state.blogPhotoPreview" />
     <div class="loader" v-if="loading">
       <span>hii</span>
     </div>
     <div class="container">
-      <div :class="{ invisible: !error }" class="err-message">
+      <div :class="{ invisible: !error }" class="err-message" v-if="error">
         <p><span>Error:</span>{{ this.errorMsg }}</p>
       </div>
       <div class="blog-info">
@@ -24,7 +24,7 @@
             class="preview"
             :class="{ 'button-inactive': !this.$store.state.blogPhotoFileURL }"
           >
-          Preview Photo
+            Preview Photo
           </button>
           <span>File Chosen: {{ this.$store.state.blogPhotoName }}</span>
         </div>
@@ -42,19 +42,21 @@
   </div>
 </template>
 <script>
+import BlogPreview from "./BlogPreview.vue"
 import { VueEditor } from "vue2-editor";
 export default {
   components: {
     VueEditor,
+    BlogPreview,
   },
   data() {
     return {
       content: "<h1>Some initial content</h1>",
-      file: null,
+      file: "",
       error: null,
       errorMsg: null,
       loading: null,
-      blogTitle: null,
+      blogTitle: "",
     };
   },
   methods: {
@@ -66,13 +68,17 @@ export default {
     },
     openPreview() {
       this.$store.commit("openPhotoPreview");
+      console.log(this.$store.state.blogPhotoPreview,"hiiiii");
     },
     uploadBlog() {
-      if (this.blogTitle.length !== 0 && this.content.length !== 0) {
-        console.log("test");
-         if (this.file) {
-           this.loading = true;
-         }
+      if (this.file == "" && this.blogTitle.length == 0 || this.file == "" || this.blogTitle.length == 0) {
+        this.error = true;
+        this.errorMsg = " Please ensure add Title and/or upload a cover photo!";
+        setTimeout(() => {
+          this.error = false;
+        }, 2500);
+      } else {
+        this.$router.push({ name: "ViewBlog" })
       }
     },
   },
