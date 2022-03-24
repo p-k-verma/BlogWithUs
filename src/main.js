@@ -11,6 +11,7 @@ import ForgotPassword from "./components/ForgotPassword.vue"
 import Admin from "./components/admin.vue"
 import Profile from "./components/profile.vue"
 import createpost from "./components/createpost.vue"
+import BlogPreview from "./components/BlogPreview.vue"
 import { store } from  "./store/index"
 import VueCookies from 'vue-cookies'
 Vue.use(VueCookies)
@@ -80,6 +81,14 @@ const routes = [
     component: createpost,
     meta: {
       title: "createpost"
+    },
+  },
+  {
+    path: "/BlogPreview",
+    name: "BlogPreview",
+    component: BlogPreview,
+    meta: {
+      title: "BlogPreview"
     },
   },
 ];
