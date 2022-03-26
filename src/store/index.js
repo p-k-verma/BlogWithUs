@@ -33,9 +33,13 @@ export const store = new Vuex.Store({
     profileEmail: null,
     profileInitials: null,
     tokkenId: null,
+    blogPhotoPreview: null,
+
+    
+    blogPhototitle: null,
     blogPhotoName: null,
     blogPhotoFileURL: null,
-    blogPhotoPreview: null,
+    blogPhotoContent: null,
   },
   actions: {
       
@@ -48,6 +52,12 @@ export const store = new Vuex.Store({
       state.profileUsername = payload.username
       state.profileEmail = payload.email
       state.profileInitials = payload.firstname.slice(0,1).toUpperCase() + payload.lastname.slice(0,1).toUpperCase()
+    },
+    contentupdation(state, payload) {
+      state.blogPhotoContent = payload
+    },
+    titleupdation(state, payload) {
+      state.blogPhototitle = payload
     },
     fileNameChange(state, payload) {
       state.blogPhotoName = payload;

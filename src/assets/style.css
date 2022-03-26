@@ -122,8 +122,8 @@
   font-size: 32px;
 }
 .post-view img {
-  width: 100%;
   margin: auto;
+  height: inherit;
 }
 .create-post .editor .ql-editor {
   padding: 20px 16px 30px;
@@ -661,7 +661,10 @@ button:hover {
 }
 .post-view .container {
   width: 80%;
-  margin-top: 19vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .post-view .ql-editor {
   padding: 0;
@@ -670,10 +673,6 @@ button:hover {
   margin-bottom: 16px;
   font-weight: 300;
   font-size: 32px;
-}
-.post-view img {
-  width: 100%;
-  margin-bottom: 32px;
 }
 /* 
 Loading spinner csss */

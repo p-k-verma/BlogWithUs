@@ -83,6 +83,7 @@ const routes = [
     meta: {
       title: "createpost"
     },
+    props: true,
   },
   {
     path: "/BlogPreview",
@@ -91,6 +92,7 @@ const routes = [
     meta: {
       title: "BlogPreview"
     },
+    props: true,
   },
   {
     path: "/ViewBlog",

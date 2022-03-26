@@ -34,9 +34,7 @@
       </div>
       <div class="blog-actions">
         <button @click="uploadBlog">Publish Blog</button>
-        <router-link class="router-button" :to="{ name: 'BlogPreview' }"
-          >Post Preview</router-link
-        >
+        <router-link class="router-button" :to="{ name: 'ViewBlog' }" @click.native="previewCheck">Post Preview</router-link>
       </div>
     </div>
   </div>
@@ -60,6 +58,11 @@ export default {
     };
   },
   methods: {
+    previewCheck(){
+      this.$store.commit('titleupdation', this.blogTitle);
+      this.$store.commit('contentupdation', this.content);
+      console.log("check",this.$store.state.blogPhototitle);
+    },
     fileChange() {
       this.file = this.$refs.blogPhoto.files[0];
       const fileName = this.file.name;
@@ -78,7 +81,9 @@ export default {
           this.error = false;
         }, 2500);
       } else {
-        this.$router.push({ name: "ViewBlog" })
+        this.$store.commit('titleupdation', this.blogTitle);
+        this.$store.commit('contentupdation', this.content);
+        this.$router.push({ name: "ViewBlog" });
       }
     },
   },

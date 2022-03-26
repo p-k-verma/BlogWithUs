@@ -52,7 +52,7 @@
     </div>
 </template>
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 export default {
     data() {
         return {
@@ -75,14 +75,14 @@ export default {
             // this.$router.push({ name: "Home" });
         },
         reloadclientdata(){
-            axios
-            .post('https://lhmpim.greenhonchos.com/api/test-login', {
-            email: this.$cookies.get("useremail"),
-            password: this.$cookies.get("userepassword"),
-            })
-            .then((response) => {
-                this.$store.commit("tokenaddition", response.data.data)
-            })
+            // axios
+            // .post('https://lhmpim.greenhonchos.com/api/test-login', {
+            // email: this.$cookies.get("useremail"),
+            // password: this.$cookies.get("userepassword"),
+            // })
+            // .then((response) => {
+            //     this.$store.commit("tokenaddition", response.data.data)
+            // })
         },
         toggle_details(){
             this.toggle_detail = !this.toggle_detail

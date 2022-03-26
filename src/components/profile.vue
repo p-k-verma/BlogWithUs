@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
   data() {
     return {
@@ -46,17 +46,17 @@ export default {
   },
   methods: {
     datafetch() {
-      axios
-        .post("https://lhmpim.greenhonchos.com/api/test-login", {
-          email: this.$cookies.get("useremail"),
-          password: this.$cookies.get("userepassword"),
-        })
-        .then((response) => {
-          this.firstName = response.data.data.firstname;
-          this.lastName = response.data.data.lastname;
-          this.username = response.data.data.username;
-          this.email = response.data.data.email;
-        });
+      // axios
+      //   .post("https://lhmpim.greenhonchos.com/api/test-login", {
+      //     email: this.$cookies.get("useremail"),
+      //     password: this.$cookies.get("userepassword"),
+      //   })
+      //   .then((response) => {
+      //     this.firstName = response.data.data.firstname;
+      //     this.lastName = response.data.data.lastname;
+      //     this.username = response.data.data.username;
+      //     this.email = response.data.data.email;
+      //   });
     },
   },
 };
