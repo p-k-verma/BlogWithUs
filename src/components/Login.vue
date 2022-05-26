@@ -42,18 +42,26 @@ export default {
     signIn() {
       if (this.email !== "" && this.password !== "") {
            axios
-        .post('https://lhmpim.greenhonchos.com/api/test-login', {
-          email: this.email,
-          password: this.password,
+        .post('http://localhost:1337/api/auth/local', {
+          "identifier": this.email,
+          "password": this.password
         })
         .then((response) => {
-          this.$store.commit("tokenaddition", response.data.data)
-          // always use tokenid to store in the cookies but due to lack of api we are saving the email and password
-          this.$cookies.set("useremail", response.data.data.email, 0 )
-          this.$cookies.set("userepassword", response.data.data.password, 0 )
+          this.$cookies.set("userjwt", response.data.jwt, 0);
+          this.$cookies.set("useremail", response.data.user.email, 0);
+          this.$cookies.set("userfirstName", response.data.user.firstName, 0);
+          this.$cookies.set("userlastName", response.data.user.lastName, 0);
+          this.$cookies.set("username", response.data.user.username, 0);
           this.$router.push({ name: "Home" })
         })
-        }
+        .catch(() => {
+        this.errorMsg = `Invalid email or password`;
+        this.error = true;
+      });
+      } else {
+        this.error = true;
+        this.errorMsg = "*Please fill all the data";
+      }
     },
   },
 

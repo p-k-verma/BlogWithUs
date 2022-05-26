@@ -6,17 +6,17 @@
               <li><router-link to="/">Home</router-link></li>
               <li><router-link to="/blogs">Blogs</router-link></li>
               <li><router-link to="/createpost">Create Post</router-link></li>
-              <li v-if="!this.$store.state.profileInitials"><router-link to="/login">Login/Register</router-link></li>
+              <li v-if="!this.$cookies.get('userjwt')"><router-link to="/login">Login/Register</router-link></li>
               <div v-else class="profile" @click="toggle_details">
-                  <span>{{ this.$store.state.profileInitials }}</span>
+                  <span>{{ this.$cookies.get("userfirstName").slice(0,1).toUpperCase() + this.$cookies.get("userlastName").slice(0,1).toUpperCase() }}</span>
                   <div class="profile-menu" v-show="toggle_detail">
                       <span class="triangle"></span>
                       <div class="info">
-                          <p class="initials">{{ this.$store.state.profileInitials }}</p>
+                          <p class="initials">{{ this.$cookies.get("userfirstName").slice(0,1).toUpperCase() + this.$cookies.get("userlastName").slice(0,1).toUpperCase() }}</p>
                           <div class="right">
-                              <p>{{ this.$store.state.profileFirstName + " " + this.$store.state.profileLastName }}</p>
-                              <p>@{{this.$store.state.profileUsername}}</p>
-                              <p>{{this.$store.state.profileEmail}}</p>
+                              <p>{{ this.$cookies.get("userfirstName") + " " + this.$cookies.get("userlastName") }}</p>
+                              <p>@{{this.$cookies.get("username")}}</p>
+                              <p>{{this.$cookies.get("useremail")}}</p>
                           </div>
                       </div>
                       <div class="options">
@@ -69,20 +69,12 @@ export default {
     },
     methods: {
         signout(){
-            console.log("hiiii");
+            this.$cookies.remove("userjwt");
             this.$cookies.remove("useremail");
-            this.$cookies.remove("userepassword");
-            // this.$router.push({ name: "Home" });
-        },
-        reloadclientdata(){
-            // axios
-            // .post('https://lhmpim.greenhonchos.com/api/test-login', {
-            // email: this.$cookies.get("useremail"),
-            // password: this.$cookies.get("userepassword"),
-            // })
-            // .then((response) => {
-            //     this.$store.commit("tokenaddition", response.data.data)
-            // })
+            this.$cookies.remove("userfirstName");
+            this.$cookies.remove("userlastName");
+            this.$cookies.remove("username");
+            this.$router.push({ name: "Home" });
         },
         toggle_details(){
             this.toggle_detail = !this.toggle_detail
